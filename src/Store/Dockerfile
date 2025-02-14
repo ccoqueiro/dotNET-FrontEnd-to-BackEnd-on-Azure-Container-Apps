@@ -34,7 +34,7 @@ COPY --from=build /root/.splunk-otel-dotnet/ .
 
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY MultiStageDocker/entrypoint.sh .
+COPY Store/entrypoint.sh .
 COPY --from=publish /app/publish .
 
 ENTRYPOINT ["sh", "entrypoint.sh"]
